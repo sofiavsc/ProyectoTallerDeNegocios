@@ -1,0 +1,1899 @@
+:root{
+
+  --cream:#FFF9F0;
+  --paper:#FFF3E0;
+
+  --ink:#241B16;
+  --ink-soft:#66564A;
+
+  --thai-red:#E94B5F;
+  --thai-pink:#F26A7A;
+
+  --thai-gold:#F4B942;
+  --thai-yellow:#FFD166;
+
+  --thai-blue:#168AAD;
+  --thai-teal:#0F8B8D;
+
+  --purple:#6C4AB6;
+
+  --dark:#19324A;
+  --dark-deep:#102638;
+
+  --line:rgba(36,27,22,0.12);
+
+  --radius:10px;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  background:var(--cream);
+
+  color:var(--ink);
+
+  font-family:'Work Sans',sans-serif;
+
+  font-weight:400;
+
+  line-height:1.6;
+
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4{
+
+  font-family:'Fraunces',serif;
+
+  color:var(--ink);
+
+  font-weight:600;
+
+  line-height:1.12;
+}
+
+a{
+
+  color:inherit;
+
+  text-decoration:none;
+}
+
+.wrap{
+
+  max-width:1120px;
+
+  margin:0 auto;
+
+  padding:0 32px;
+}
+
+::selection{
+
+  background:var(--thai-gold);
+
+  color:var(--dark-deep);
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header.site{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:100;
+
+  background:rgba(255,249,240,.96);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid var(--line);
+}
+
+.nav-row{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:18px 32px;
+
+  max-width:1120px;
+
+  margin:0 auto;
+}
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  font-family:'Fraunces',serif;
+
+  font-weight:600;
+
+  font-size:1.15rem;
+
+  color:var(--thai-red);
+}
+
+.brand .dot{
+
+  width:10px;
+
+  height:10px;
+
+  border-radius:50%;
+
+  background:var(--thai-gold);
+
+  box-shadow:0 0 0 4px rgba(244,185,66,.18);
+}
+
+nav.links{
+
+  display:flex;
+
+  gap:25px;
+
+  font-size:.84rem;
+}
+
+nav.links a{
+
+  color:var(--ink-soft);
+
+  position:relative;
+
+  padding-bottom:5px;
+
+  transition:.2s;
+}
+
+nav.links a:hover{
+
+  color:var(--thai-red);
+}
+
+nav.links a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:0;
+
+  height:2px;
+
+  width:0;
+
+  background:var(--thai-gold);
+
+  transition:.25s;
+}
+
+nav.links a:hover::after{
+
+  width:100%;
+}
+
+.menu-btn{
+
+  display:none;
+
+  border:0;
+
+  background:none;
+
+  font-size:1.4rem;
+
+  cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+  position:relative;
+
+  background:
+
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(242,106,122,.35),
+      transparent 25%
+    ),
+
+    linear-gradient(
+      135deg,
+      var(--thai-blue),
+      var(--thai-teal) 48%,
+      var(--dark)
+    );
+
+  color:white;
+
+  overflow:hidden;
+
+  padding:105px 32px 0;
+}
+
+.hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+
+  height:300px;
+
+  border:1px solid rgba(255,255,255,.18);
+
+  border-radius:50%;
+
+  right:-90px;
+
+  top:80px;
+}
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+
+  height:180px;
+
+  border:1px solid rgba(255,255,255,.12);
+
+  border-radius:50%;
+
+  right:40px;
+
+  top:140px;
+}
+
+.hero-inner{
+
+  max-width:1120px;
+
+  margin:auto;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.eyebrow-line{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  font-size:.8rem;
+
+  letter-spacing:.07em;
+
+  color:var(--thai-yellow);
+
+  margin-bottom:26px;
+}
+
+.eyebrow-line .rule{
+
+  width:44px;
+
+  height:2px;
+
+  background:var(--thai-yellow);
+}
+
+.hero h1{
+
+  font-size:clamp(3rem,8vw,6.3rem);
+
+  color:var(--cream);
+}
+
+.hero h1 em{
+
+  font-style:italic;
+
+  font-weight:500;
+
+  color:var(--thai-yellow);
+}
+
+.hero .lede{
+
+  max-width:570px;
+
+  margin-top:26px;
+
+  color:#E6F3F2;
+
+  font-size:1.08rem;
+
+  font-weight:300;
+}
+
+
+/* =====================================================
+   HERO STATS
+===================================================== */
+
+.hero-stats{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  margin-top:60px;
+
+  border-top:1px solid rgba(255,255,255,.2);
+}
+
+.hero-stats div{
+
+  padding:22px 18px 22px 0;
+
+  border-right:1px solid rgba(255,255,255,.18);
+}
+
+.hero-stats div:last-child{
+
+  border-right:0;
+}
+
+.hero-stats .num{
+
+  font-family:'Fraunces',serif;
+
+  font-size:1.85rem;
+
+  color:var(--thai-yellow);
+}
+
+.hero-stats .label{
+
+  font-size:.76rem;
+
+  color:#D4E4E3;
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+section{
+
+  padding:95px 0;
+}
+
+.section-head{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  gap:30px;
+
+  margin-bottom:55px;
+
+  border-bottom:1px solid var(--line);
+
+  padding-bottom:25px;
+
+  flex-wrap:wrap;
+}
+
+.section-head .tag{
+
+  font-size:.78rem;
+
+  color:var(--thai-red);
+
+  letter-spacing:.05em;
+
+  font-weight:600;
+
+  margin-bottom:9px;
+}
+
+.section-head h2{
+
+  font-size:clamp(2rem,4vw,2.9rem);
+}
+
+.section-head p{
+
+  max-width:420px;
+
+  color:var(--ink-soft);
+
+  font-size:.93rem;
+}
+
+
+/* =====================================================
+   NUEVA SECCIÓN — UBICACIÓN
+===================================================== */
+
+.location-section{
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      #FFF9F0 0%,
+      #FFF3E0 100%
+    );
+}
+
+
+/* Fondo decorativo */
+
+.location-section::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:350px;
+
+  height:350px;
+
+  border:1px dashed rgba(22,138,173,.14);
+
+  border-radius:50%;
+
+  left:-160px;
+
+  top:120px;
+}
+
+.location-section::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:280px;
+
+  height:280px;
+
+  border:1px dashed rgba(233,75,95,.13);
+
+  border-radius:50%;
+
+  right:-130px;
+
+  bottom:100px;
+}
+
+
+/* =====================================================
+   INTRO UBICACIÓN
+===================================================== */
+
+.location-intro{
+
+  display:grid;
+
+  grid-template-columns:1fr 1.25fr;
+
+  gap:50px;
+
+  align-items:center;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.location-title{
+
+  font-size:clamp(3rem,5vw,4.7rem);
+
+  line-height:.98;
+
+  margin-bottom:22px;
+}
+
+.location-title em{
+
+  color:var(--thai-teal);
+
+  font-style:italic;
+}
+
+.location-description{
+
+  color:var(--ink-soft);
+
+  font-size:1rem;
+
+  max-width:550px;
+}
+
+
+/* =====================================================
+   MAPA
+===================================================== */
+
+.map-wrapper{
+
+  position:relative;
+
+  min-height:390px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+.map-card{
+
+  width:100%;
+
+  max-width:520px;
+
+  min-height:380px;
+
+  position:relative;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+}
+
+
+/* SVG mapa estilizado */
+
+.thailand-map{
+
+  width:300px;
+
+  height:390px;
+
+  filter:drop-shadow(0 15px 15px rgba(25,50,74,.10));
+}
+
+.neighbor{
+
+  font-family:'Work Sans',sans-serif;
+
+  font-size:13px;
+
+  font-weight:500;
+
+  fill:#4F5B63;
+}
+
+.map-country{
+
+  font-family:'Work Sans',sans-serif;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  fill:white;
+}
+
+.map-city{
+
+  font-family:'Work Sans',sans-serif;
+
+  font-size:11px;
+
+  font-weight:600;
+
+  fill:var(--thai-red);
+}
+
+
+/* =====================================================
+   BRÚJULA
+===================================================== */
+
+.compass{
+
+  position:absolute;
+
+  top:10px;
+
+  right:20px;
+
+  width:75px;
+
+  height:75px;
+
+  border:2px solid var(--thai-gold);
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:var(--thai-gold);
+
+  font-family:'Fraunces',serif;
+
+  font-size:.85rem;
+}
+
+.compass::before{
+
+  content:"✦";
+
+  position:absolute;
+
+  font-size:2rem;
+
+  color:var(--thai-gold);
+}
+
+.compass span{
+
+  position:absolute;
+
+  top:-20px;
+}
+
+.compass .south{
+
+  top:auto;
+
+  bottom:-20px;
+}
+
+.compass .east{
+
+  right:-20px;
+}
+
+.compass .west{
+
+  left:-20px;
+}
+
+
+/* =====================================================
+   DATOS DE UBICACIÓN
+===================================================== */
+
+.location-facts{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:0;
+
+  margin-top:35px;
+
+  border-top:1px solid var(--line);
+
+  border-bottom:1px solid var(--line);
+}
+
+.location-fact{
+
+  padding:22px 18px 22px 0;
+
+  display:flex;
+
+  gap:12px;
+
+  align-items:flex-start;
+
+  border-right:1px solid var(--line);
+}
+
+.location-fact:last-child{
+
+  border-right:0;
+}
+
+.fact-icon{
+
+  width:35px;
+
+  height:35px;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:var(--thai-red);
+
+  color:white;
+
+  font-size:.9rem;
+}
+
+.location-fact:nth-child(2) .fact-icon{
+
+  background:var(--thai-teal);
+}
+
+.location-fact:nth-child(3) .fact-icon{
+
+  background:var(--thai-gold);
+
+  color:var(--dark);
+}
+
+.location-fact:nth-child(4) .fact-icon{
+
+  background:var(--purple);
+}
+
+.fact-title{
+
+  font-size:.74rem;
+
+  color:var(--ink-soft);
+
+  margin-bottom:3px;
+}
+
+.fact-value{
+
+  font-family:'Fraunces',serif;
+
+  font-size:1rem;
+
+  font-weight:600;
+}
+
+
+/* =====================================================
+   POSICIÓN ESTRATÉGICA
+===================================================== */
+
+.strategic-box{
+
+  margin-top:70px;
+
+  display:grid;
+
+  grid-template-columns:1fr 1.5fr;
+
+  gap:45px;
+
+  background:#FCE9E4;
+
+  border-radius:var(--radius);
+
+  padding:42px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.strategic-box::after{
+
+  content:"✦";
+
+  position:absolute;
+
+  right:25px;
+
+  bottom:15px;
+
+  font-size:5rem;
+
+  color:rgba(233,75,95,.10);
+}
+
+.strategic-label{
+
+  color:var(--thai-red);
+
+  letter-spacing:.08em;
+
+  font-size:.78rem;
+
+  font-weight:600;
+
+  margin-bottom:12px;
+}
+
+.strategic-box h3{
+
+  font-size:2rem;
+
+  color:var(--dark);
+}
+
+.strategic-box p{
+
+  color:var(--ink-soft);
+
+  max-width:600px;
+}
+
+
+/* =====================================================
+   CIUDADES
+===================================================== */
+
+.cities-section{
+
+  margin-top:85px;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.cities-heading{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:end;
+
+  gap:25px;
+
+  margin-bottom:30px;
+}
+
+.cities-heading h3{
+
+  font-size:clamp(2.2rem,4vw,3.5rem);
+}
+
+.cities-heading h3 em{
+
+  color:var(--thai-teal);
+
+  font-style:italic;
+}
+
+.cities-heading p{
+
+  max-width:470px;
+
+  color:var(--ink-soft);
+
+  font-size:.9rem;
+}
+
+
+/* =====================================================
+   TARJETAS DE CIUDADES
+===================================================== */
+
+.cities-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
+}
+
+.city-card{
+
+  background:white;
+
+  border:1px solid rgba(36,27,22,.09);
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
+
+  transition:.3s;
+
+  box-shadow:0 5px 20px rgba(36,27,22,.04);
+}
+
+.city-card:hover{
+
+  transform:translateY(-7px);
+
+  box-shadow:0 16px 35px rgba(36,27,22,.11);
+}
+
+.city-image{
+
+  height:220px;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.city-image img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:.4s;
+}
+
+.city-card:hover .city-image img{
+
+  transform:scale(1.05);
+}
+
+.city-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      transparent 40%,
+      rgba(0,0,0,.72)
+    );
+}
+
+.city-name{
+
+  position:absolute;
+
+  bottom:16px;
+
+  left:18px;
+
+  color:white;
+
+  font-family:'Fraunces',serif;
+
+  font-size:1.45rem;
+
+  font-weight:600;
+}
+
+.city-name::before{
+
+  content:"●";
+
+  color:var(--thai-pink);
+
+  font-size:.8rem;
+
+  margin-right:8px;
+}
+
+.city-content{
+
+  padding:20px 20px 22px;
+}
+
+.city-content p{
+
+  color:var(--ink-soft);
+
+  font-size:.87rem;
+
+  line-height:1.55;
+}
+
+.city-tag{
+
+  margin-top:17px;
+
+  display:inline-block;
+
+  font-size:.72rem;
+
+  color:var(--thai-teal);
+
+  border:1px solid rgba(15,139,141,.3);
+
+  padding:5px 10px;
+
+  border-radius:999px;
+}
+
+
+/* =====================================================
+   SUBBLOQUES
+===================================================== */
+
+.subblock{
+
+  margin-bottom:64px;
+}
+
+.subblock .kicker{
+
+  display:flex;
+
+  align-items:baseline;
+
+  gap:14px;
+
+  margin-bottom:16px;
+}
+
+.subblock .kicker .idx{
+
+  font-family:'Fraunces',serif;
+
+  font-style:italic;
+
+  color:var(--thai-red);
+
+  font-size:1.3rem;
+}
+
+.subblock h3{
+
+  font-size:1.5rem;
+}
+
+.body{
+
+  color:var(--ink-soft);
+
+  max-width:760px;
+
+  font-size:1rem;
+}
+
+
+/* =====================================================
+   COMERCIO
+===================================================== */
+
+.trade-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:40px;
+
+  margin-top:28px;
+}
+
+.trade-card h4{
+
+  font-size:.95rem;
+
+  color:var(--thai-red);
+
+  margin-bottom:14px;
+
+  font-family:'Work Sans',sans-serif;
+}
+
+.trade-list{
+
+  list-style:none;
+}
+
+.trade-list li{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  padding:11px 0;
+
+  border-bottom:1px solid var(--line);
+
+  font-size:.94rem;
+}
+
+.trade-list .pct{
+
+  color:var(--thai-blue);
+
+  font-family:'Fraunces',serif;
+
+  font-weight:600;
+}
+
+.flow-note{
+
+  margin-top:16px;
+
+  color:var(--ink-soft);
+
+  font-size:.84rem;
+
+  font-style:italic;
+}
+
+
+/* =====================================================
+   CHIPS
+===================================================== */
+
+.chip-row{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:22px;
+}
+
+.chip{
+
+  border:1px solid var(--thai-blue);
+
+  color:var(--thai-blue);
+
+  padding:7px 16px;
+
+  border-radius:999px;
+
+  font-size:.82rem;
+
+  background:rgba(22,138,173,.04);
+
+  cursor:pointer;
+
+  font-family:inherit;
+
+  transition:background .2s ease, color .2s ease, transform .15s ease;
+}
+
+.chip:hover{
+
+  background:rgba(22,138,173,.12);
+
+  transform:translateY(-1px);
+}
+
+.chip.active{
+
+  background:var(--thai-blue);
+
+  color:#fff;
+}
+
+.chip-info{
+
+  margin-top:18px;
+
+  padding:16px 20px;
+
+  border:1px solid var(--thai-blue);
+
+  border-left-width:4px;
+
+  border-radius:6px;
+
+  background:rgba(22,138,173,.05);
+
+  animation:chip-info-in .18s ease;
+}
+
+.chip-info-title{
+
+  display:block;
+
+  font-weight:700;
+
+  color:var(--thai-blue);
+
+  font-size:.85rem;
+
+  margin-bottom:6px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.04em;
+}
+
+.chip-info-text{
+
+  font-size:.92rem;
+
+  line-height:1.55;
+
+  margin:0;
+}
+
+@keyframes chip-info-in{
+
+  from{ opacity:0; transform:translateY(-4px); }
+
+  to{ opacity:1; transform:translateY(0); }
+}
+
+
+/* =====================================================
+   CULTURA
+===================================================== */
+
+.culture-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:1px;
+
+  background:var(--line);
+}
+
+.culture-card{
+
+  background:var(--cream);
+
+  padding:30px 26px;
+
+  transition:.2s;
+}
+
+.culture-card:hover{
+
+  transform:translateY(-4px);
+}
+
+.culture-card h4{
+
+  color:var(--thai-red);
+
+  font-family:'Fraunces',serif;
+
+  font-size:1.05rem;
+
+  margin-bottom:10px;
+}
+
+.culture-card p{
+
+  color:var(--ink-soft);
+
+  font-size:.9rem;
+}
+
+
+/* =====================================================
+   VALORES
+===================================================== */
+
+.pillar-row{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:60px;
+}
+
+.pillar-list{
+
+  list-style:none;
+
+  margin-top:6px;
+}
+
+.pillar-list li{
+
+  padding:16px 0;
+
+  border-top:1px solid var(--line);
+
+  display:grid;
+
+  grid-template-columns:130px 1fr;
+
+  gap:18px;
+}
+
+.pillar-list li:last-child{
+
+  border-bottom:1px solid var(--line);
+}
+
+.pillar-list .term{
+
+  font-family:'Fraunces',serif;
+
+  font-style:italic;
+
+  color:var(--thai-blue);
+}
+
+.pillar-list .def{
+
+  color:var(--ink-soft);
+
+  font-size:.9rem;
+}
+
+
+/* =====================================================
+   REGIONES
+===================================================== */
+
+.region-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:24px;
+
+  margin-top:10px;
+}
+
+.region-card{
+
+  border-top:3px solid var(--thai-gold);
+
+  padding-top:16px;
+}
+
+.region-card h4{
+
+  font-size:1.02rem;
+
+  margin-bottom:8px;
+}
+
+.region-card p{
+
+  font-size:.86rem;
+
+  color:var(--ink-soft);
+}
+
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+
+.stat-strip{
+
+  display:flex;
+
+  gap:52px;
+
+  margin-top:36px;
+
+  flex-wrap:wrap;
+}
+
+.stat-strip .item{
+
+  max-width:220px;
+}
+
+.stat-strip .num{
+
+  font-family:'Fraunces',serif;
+
+  font-size:2.6rem;
+
+  color:var(--thai-red);
+}
+
+.stat-strip .label{
+
+  font-size:.85rem;
+
+  color:var(--ink-soft);
+}
+
+
+/* =====================================================
+   EQUIPO
+===================================================== */
+
+.team-section{
+
+  background:linear-gradient(
+    135deg,
+    #FFF3E0,
+    #FFF9F0
+  );
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.team-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:18px;
+}
+
+.team-card{
+
+  position:relative;
+
+  background:white;
+
+  border:1px solid rgba(36,27,22,.08);
+
+  padding:32px 28px;
+
+  min-height:175px;
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
+
+  transition:.25s;
+}
+
+.team-card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:0 15px 35px rgba(36,27,22,.10);
+}
+
+.team-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  height:5px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      var(--thai-red),
+      var(--thai-gold),
+      var(--thai-blue)
+    );
+}
+
+.team-number{
+
+  color:var(--thai-red);
+
+  font-family:'Fraunces',serif;
+
+  font-style:italic;
+
+  margin-bottom:20px;
+}
+
+.team-card h3{
+
+  font-size:1.4rem;
+
+  margin-bottom:7px;
+}
+
+.team-card span{
+
+  color:var(--ink-soft);
+
+  font-size:.84rem;
+
+  letter-spacing:.08em;
+}
+
+.team-card.featured{
+
+  background:var(--dark);
+}
+
+.team-card.featured h3{
+
+  color:var(--cream);
+}
+
+.team-card.featured span{
+
+  color:#D8E5E5;
+}
+
+.team-card.featured .team-number{
+
+  color:var(--thai-yellow);
+}
+
+
+/* =====================================================
+   NEGOCIOS
+===================================================== */
+
+section.dark{
+
+  background:
+
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(22,138,173,.25),
+      transparent 25%
+    ),
+
+    var(--dark);
+
+  color:var(--cream);
+}
+
+section.dark .section-head{
+
+  border-color:rgba(255,255,255,.18);
+}
+
+section.dark h2,
+section.dark h3{
+
+  color:var(--cream);
+}
+
+section.dark .section-head p{
+
+  color:#C7D7D7;
+}
+
+section.dark .tag{
+
+  color:var(--thai-yellow);
+}
+
+.risk-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:56px;
+}
+
+.risk-col h3{
+
+  color:var(--thai-yellow);
+
+  font-size:1.2rem;
+
+  margin-bottom:22px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+}
+
+.risk-col h3 .mark{
+
+  width:28px;
+
+  height:28px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:.85rem;
+}
+
+.risk-col.avoid h3 .mark{
+
+  background:var(--thai-red);
+
+  color:white;
+}
+
+.risk-col.do h3 .mark{
+
+  background:var(--thai-teal);
+
+  color:white;
+}
+
+.risk-item{
+
+  padding:18px 0;
+
+  border-top:1px solid rgba(255,255,255,.14);
+}
+
+.risk-item:last-child{
+
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+
+.risk-item .t{
+
+  color:var(--cream);
+
+  font-weight:500;
+
+  margin-bottom:5px;
+}
+
+.risk-item .d{
+
+  color:#BFD0D0;
+
+  font-size:.87rem;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+  background:var(--dark-deep);
+
+  color:#AAB8B8;
+
+  padding:56px 0 36px;
+
+  font-size:.82rem;
+}
+
+footer .wrap{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:40px;
+
+  flex-wrap:wrap;
+}
+
+footer h5{
+
+  color:var(--cream);
+
+  font-family:'Fraunces',serif;
+
+  margin-bottom:12px;
+
+  font-size:1rem;
+}
+
+footer .sources{
+
+  max-width:560px;
+}
+
+footer .sources span{
+
+  display:block;
+
+  margin-bottom:6px;
+}
+
+footer .status{
+
+  border:1px solid rgba(255,255,255,.18);
+
+  padding:14px 18px;
+
+  max-width:260px;
+
+  border-radius:var(--radius);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px){
+
+  nav.links{
+    display:none;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero-stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .location-intro{
+    grid-template-columns:1fr;
+  }
+
+  .location-facts{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .location-fact:nth-child(2){
+    border-right:0;
+  }
+
+  .strategic-box{
+    grid-template-columns:1fr;
+  }
+
+  .cities-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .trade-grid,
+  .pillar-row,
+  .risk-grid{
+    grid-template-columns:1fr;
+  }
+
+  .culture-grid{
+    grid-template-columns:1fr;
+  }
+
+  .region-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .team-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .wrap{
+    padding:0 22px;
+  }
+
+  .nav-row{
+    padding:16px 22px;
+  }
+
+  .hero{
+    padding:80px 22px 0;
+  }
+
+  .hero-stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  section{
+    padding:70px 0;
+  }
+
+  .location-facts{
+    grid-template-columns:1fr;
+  }
+
+  .location-fact{
+    border-right:0;
+
+    border-bottom:1px solid var(--line);
+  }
+
+  .cities-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cities-heading{
+    display:block;
+  }
+
+  .cities-heading p{
+    margin-top:15px;
+  }
+
+  .team-grid{
+    grid-template-columns:1fr;
+  }
+
+  .region-grid{
+    grid-template-columns:1fr;
+  }
+
+  .strategic-box{
+    padding:28px;
+  }
+
+  .pillar-list li{
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+
+  footer .wrap{
+    flex-direction:column;
+  }
+
+}
+
+/* Menú móvil */
+@media (max-width: 880px){
+  nav.links.mobile-open{
+    display:flex;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    gap:0;
+    padding:18px 32px;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 10px 25px rgba(36,27,22,.08);
+  }
+
+  nav.links.mobile-open a{
+    padding:12px 0;
+  }
+}
